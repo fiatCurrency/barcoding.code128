@@ -3,7 +3,6 @@ package uk.co.quantril.barcoding.code128.api
 import uk.co.quantril.barcoding.code128.code128support.EncodingOptions
 import uk.co.quantril.barcoding.code128.unescape.unescape
 import uk.co.quantril.barcoding.code128.partition.partition
-import uk.co.quantril.barcoding.code128.pointcode.pointcode
 
 internal fun generateGeneric(text: String, options: EncodingOptions): String {
     val textUe = unescape(text)
