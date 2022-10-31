@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Code128"
+include ':app'
+include ':code128'
+include ':code128:api'
+include ':code128:support'
+include ':code128:unescape'
+include ':code128:partition'
+include ':code128:code128support'
+include ':code128:pointcode'
