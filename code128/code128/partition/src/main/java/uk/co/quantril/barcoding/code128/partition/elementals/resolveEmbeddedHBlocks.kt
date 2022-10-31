@@ -28,10 +28,10 @@ private fun CharArray.processBlock(index: Int): Char {
         val typeNext = if (indexNext == this.size) zeroChar else this[indexNext]
         val typeBefore = if (index == 0) zeroChar else this[index - 1]
 
-        if (typeNext == zeroChar && typeBefore in "AB") typeBefore
-        else if (typeNext == zeroChar && typeBefore == zeroChar) typeNext
-        else if (typeBefore == zeroChar && typeNext in "AB") typeNext
-        else if (typeBefore == typeNext && typeNext in "AB") typeNext
+        if (typeNext !in "AB" && typeBefore in "AB") typeBefore
+        else if (typeNext !in "AB" && typeBefore !in "AB") zeroChar
+        else if (typeBefore !in "AB" && typeNext in "AB") typeNext
+        else if (typeBefore==typeNext && typeNext in "AB") typeNext
         else if (typeBefore in "AB" && typeNext in "AB" && typeBefore != typeNext) {
 
             // This is where we have an A block one side and a B block the other. We
