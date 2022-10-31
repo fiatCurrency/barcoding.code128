@@ -21,19 +21,11 @@ public fun partition(text: String, options: EncodingOptions): String {
         resolveEmbeddedFBlocks()
         resolveHBlocksByArray(lexABHZ(text))
         resolveSolitaryFBlock(options.setWhenJustFnc1)
-        dump(10)
         check(theseTypesNotPresent("F"))
         resolveEmbeddedHBlocks()
-        dump(11)
         resolveHBlocksByPreference(options.preferSetaOverSetb)
-        dump(12)
         check(theseTypesNotPresent("H"))
         check(onlyTheseTypesPresent("ABCZ"))
-        dump(14)
     }
     return ca.concatToString()
-}
-
-private fun CharArray.dump(n: Int) {
-    println("$n: "+this.concatToString())
 }

@@ -20,19 +20,13 @@ import uk.co.quantril.barcoding.code128.pointcode.helpers.render2
 
 public fun pointcode(text: String, codeSets: String, defaultStart: CodeSet): List<Int> {
     val s1 = weave(codeSets.asSequence(), text.asSequence())    // All sets in ASCIIF
-        println(render2(s1))
     val s2 = s1.performCpMappingSeta()
-        println(render2(s2))
     val s3 = s2.performCpMappingSetb()
-        println(render2(s3))
     val s4 = s3.performCpMappingSetc()
-        println(render2(s4))
     val s5 = s4.applyCodeChanges()
-        println(render1(s5))
         // Now, we are working with a single sequence of integers, the
         //   pairing of each with their CodeSet now having been discharged.
     val s6 = s5.ensureStartCode(defaultStart)               // Special: if text is empty!
-        println(render1(s5))
         // TODO: Handle SHIFT codes
         // TODO: Compute checksum
         // TODO: Add Stop Code
