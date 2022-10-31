@@ -8,13 +8,14 @@ import uk.co.quantril.barcoding.code128.pointcode.pointcode
 internal fun generateGeneric(text: String, options: EncodingOptions): String {
     val textUe = unescape(text)
     val textPr = partition(textUe, options)
+    val pcList = pointcode(textUe, textPr, options.setWhenEmpty)
     /*
     val en = encode(ca.toString(),text2)
     val en2 = en.map { x -> x.toString().trim() }
     val en3 = en2.joinToString(separator=" ",prefix="[",postfix="]")
     */
 
-    return textPr
+    return pcListToString(pcList)
 }
 
 private fun pcListToString(pca: List<Int>): String {
