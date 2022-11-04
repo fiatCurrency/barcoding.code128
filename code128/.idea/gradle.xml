@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/code128" />
             <option value="$PROJECT_DIR$/code128/api" />
             <option value="$PROJECT_DIR$/code128/code128support" />
+            <option value="$PROJECT_DIR$/code128/encodation" />
             <option value="$PROJECT_DIR$/code128/partition" />
             <option value="$PROJECT_DIR$/code128/pointcode" />
             <option value="$PROJECT_DIR$/code128/support" />
