@@ -14,8 +14,12 @@ internal class GenerateGenericKtTest {
             setWhenJustFnc1=CodeSet.Setc,
             setWhenEmpty=CodeSet.Setb
         )
-        val s = generateGeneric("do\n `0x0A` 645`FNC1`4343 Cc", options)
-        println(s)
+        println(generateGeneric("", options))
+        println(generateGeneric("56", options))
+        println(generateGeneric("145", options))
+        println(generateGeneric("`U+000A U+0007 FNC2 FNC4` AB5467DE",options))
+        println(generateGeneric("do\n `0x0A` 645`FNC1`4343 Cc", options))
+
     }
 
 }
